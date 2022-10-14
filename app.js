@@ -2,10 +2,7 @@ const express = require('express');
 const app = express();
 const ejsMate = require('ejs-mate');
 const path = require('path');
-
-
-
-
+const port = process.env.PORT || 3000
 
 app.engine('ejs', ejsMate)
 app.set('view engine', 'ejs');
@@ -19,9 +16,6 @@ app.get('/', (req, res) => {
 })
 
 
-
-
-
-app.listen(3000, () => {
-    console.log("Listening on port 3000")
+app.listen(port, () => {
+    console.log(`Listening on ${port}`)
 });
